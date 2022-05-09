@@ -29,7 +29,7 @@ SECRET_KEY = 'dpjyzvmrnj#hod@2g0p(h3%*#8$#2+@xc_0pfec)=wb_tua&i6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mosaychurch.herokuapp.com',]
+ALLOWED_HOSTS = ['mosay360.herokuapp.com',]
 
 SITE_ID = 1
 # Application definition
