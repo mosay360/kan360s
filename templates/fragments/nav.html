@@ -1,0 +1,79 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo mr-auto"><a href="index.html"><span>Mosay</span>360</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+               
+                <li class="active"><a href="/">Home</a></li>
+
+                <li class="drop-down"><a href="">About</a>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li class="drop-down"><a href="#">Deep Drop Down</a>
+                            <ul>
+                                <li><a href="#">Deep Drop Down 1</a></li>
+                                <li><a href="#">Deep Drop Down 2</a></li>
+                                <li><a href="#">Deep Drop Down 3</a></li>
+                                <li><a href="#">Deep Drop Down 4</a></li>
+                                <li><a href="#">Deep Drop Down 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="/services">Services</a></li>
+                <li><a href="/portfolio">Products</a></li>
+
+                <li><a href="{% url 'blog:blogIndex' %}">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+                    <!-- dropdown begin -->
+                    <li class="drop-down"><a href="">User Account</a>
+                        <ul>
+                
+
+                
+
+                {% if user.is_authenticated %}
+               
+                <li><a href="{% url 'blog:add_post' %}">Add Post </a></li> 
+
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+               
+                {% else %}
+                           
+                <li><a href="{% url 'register' %}">Register</a></li>
+
+                <li><a href="{% url 'login' %}">Login</a></li>
+
+                {% endif %}
+
+                            
+                        </ul>
+                    </li>
+
+                    <!-- dropdown end -->
+
+            </ul>
+        </nav><!-- .nav-menu -->
+
+        <div class="header-social-links">
+            
+            <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+           
+            <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+            {% if user.is_authenticated %}
+            <i class="linkedin" style="color: cadetblue;"> Welcome, {{user.username| capfirst}} </i>
+        
+            {% endif %}
+        </div>
+
+    </div>
+</header><!-- End Header -->
